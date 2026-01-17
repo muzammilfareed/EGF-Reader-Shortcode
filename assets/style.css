@@ -1,0 +1,1244 @@
+.egfReaderHost[data-egf-reader="1"]
+{
+    --bg:#0b0f14;
+    --text:#e8eef6;
+    --muted:#a7b4c6;
+    --accent:#4da3ff;
+    --bad:#ff5c7a;
+    --good:#42d392;
+    --line:#223045;
+    --radius:14px;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+    --pad: 14px;
+    --hPad: 16px;
+    --title: 16px;
+    --textSize: 16px;
+
+    --bgBase: #0b0f14;
+    --bgGlow1: rgba(77,163,255,.10);
+    --bgGlow2: rgba(66,211,146,.08);
+
+    --headerBg: rgba(17,24,38,.85);
+
+    --cardTop: rgba(17,24,38,.92);
+    --cardBot: rgba(15,22,34,.86);
+
+    --surface1: rgba(0,0,0,.18);
+    --surface2: rgba(0,0,0,.12);
+    --surface3: rgba(0,0,0,.16);
+
+    --borderSoft: rgba(255,255,255,.08);
+    --borderSoft2: rgba(255,255,255,.10);
+
+    --btnTop: rgba(255,255,255,.07);
+    --btnBot: rgba(0,0,0,.22);
+    --btnBorder: rgba(255,255,255,.14);
+    --btnHoverBorder: rgba(77,163,255,.55);
+    --btnShadow: 0 10px 22px rgba(0,0,0,.28);
+
+    --btnSecondaryBg: rgba(0,0,0,.10);
+
+    --pillBg: rgba(0,0,0,.12);
+    --pillBorder: rgba(255,255,255,.10);
+
+    --focusRing: 0 0 0 3px rgba(77,163,255,.28);
+
+    color-scheme: light dark;
+
+    --noticeBg: rgba(77,163,255,.10);
+    --noticeBorder: rgba(77,163,255,.22);
+    --noticeText: var(--text);
+
+    --noticeNeutralBg: rgba(0,0,0,.12);
+    --noticeNeutralBorder: rgba(255,255,255,.10);
+
+    --noticeWarnBg: rgba(255,92,122,.08);
+    --noticeWarnBorder: rgba(255,92,122,.22);
+    --noticeWarnText: var(--text);
+}
+
+.egfReaderHost[data-egf-reader="1"][data-theme="light"]
+{
+    --bgBase: #f6f8fc;
+    --text: #0b1220;
+    --muted: #4a5a73;
+
+    --line: rgba(15, 25, 45, .14);
+
+    --headerBg: rgba(255,255,255,.85);
+
+    --cardTop: rgba(255,255,255,.92);
+    --cardBot: rgba(245,248,255,.92);
+
+    --surface1: rgba(255,255,255,.70);
+    --surface2: rgba(255,255,255,.55);
+    --surface3: rgba(255,255,255,.45);
+
+    --borderSoft: rgba(15, 25, 45, .10);
+    --borderSoft2: rgba(15, 25, 45, .14);
+
+    --shadow: 0 10px 30px rgba(0,0,0,.12);
+
+    --bgGlow1: rgba(77,163,255,.10);
+    --bgGlow2: rgba(66,211,146,.10);
+
+    --btnTop: rgba(255,255,255,.95);
+    --btnBot: rgba(235,240,250,.92);
+    --btnBorder: rgba(15,25,45,.16);
+    --btnHoverBorder: rgba(15,25,45,.30);
+    --btnShadow: 0 10px 22px rgba(0,0,0,.10);
+
+    --btnSecondaryBg: rgba(15,25,45,.06);
+
+    --pillBg: rgba(15,25,45,.06);
+    --pillBorder: rgba(15,25,45,.12);
+
+    --focusRing: 0 0 0 3px rgba(77,163,255,.22);
+
+    --noticeBg: rgba(15,25,45,.04);
+    --noticeBorder: rgba(15,25,45,.14);
+    --noticeText: #0b1220;
+
+    --noticeNeutralBg: rgba(15,25,45,.03);
+    --noticeNeutralBorder: rgba(15,25,45,.12);
+
+    --noticeWarnBg: rgba(255,92,122,.10);
+    --noticeWarnBorder: rgba(255,92,122,.25);
+    --noticeWarnText: #0b1220;
+}
+
+@media (max-width: 980px)
+{
+    .egfReaderHost[data-egf-reader="1"]
+    {
+        --pad: 12px;
+        --hPad: 12px;
+        --title: 16px;
+        --textSize: 16px;
+    }
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"]
+    {
+        --pad: 10px;
+        --hPad: 10px;
+        --title: 15px;
+        --textSize: 16px;
+    }
+}
+
+/* Component-wide box sizing */
+
+.egfReaderHost[data-egf-reader="1"],
+.egfReaderHost[data-egf-reader="1"] *
+{
+    box-sizing:border-box;
+}
+
+/* Transitions only inside component */
+
+.egfReaderHost[data-egf-reader="1"] .card,
+.egfReaderHost[data-egf-reader="1"] .content,
+.egfReaderHost[data-egf-reader="1"] .btn,
+.egfReaderHost[data-egf-reader="1"] .toggle,
+.egfReaderHost[data-egf-reader="1"] .volCtl,
+.egfReaderHost[data-egf-reader="1"] .pill,
+.egfReaderHost[data-egf-reader="1"] .settingsRow,
+.egfReaderHost[data-egf-reader="1"] .choice
+{
+    transition:
+        background-color .18s ease,
+        color .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        filter .18s ease;
+}
+
+/* IMPORTANT: don't style WP body/html. Style component root instead. */
+
+.egfReaderHost[data-egf-reader="1"] .egfReader
+{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background:
+        radial-gradient(1200px 600px at 30% 10%, var(--bgGlow1), transparent 60%),
+        radial-gradient(900px 500px at 80% 40%, var(--bgGlow2), transparent 60%),
+        var(--bgBase);
+    color:var(--text);
+
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+
+    /* Protects from theme direction/typography oddities */
+
+    direction: ltr;
+}
+
+.egfReaderHost[data-egf-reader="1"] header
+{
+    display:flex; gap:10px; align-items:center; justify-content:space-between;
+    padding:12px var(--hPad);
+    border-bottom:1px solid var(--line);
+    background: var(--headerBg);
+    backdrop-filter: blur(10px);
+    position:sticky; top:0; z-index:10;
+}
+
+.egfReaderHost[data-egf-reader="1"] header .left
+{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+}
+
+.egfReaderHost[data-egf-reader="1"] .brand
+{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    letter-spacing:.2px;
+    white-space:nowrap
+}
+
+.egfReaderHost[data-egf-reader="1"] .brand .dot
+{
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    background:var(--accent);
+    box-shadow:0 0 0 6px rgba(77,163,255,.18)
+}
+
+.egfReaderHost[data-egf-reader="1"] .coverThumb
+{
+    width:38px;
+    height:46px;
+    border-radius:10px;
+    object-fit:cover;
+    border:1px solid var(--borderSoft);
+    display:none;
+    flex:0 0 auto;
+}
+
+.egfReaderHost[data-egf-reader="1"] .pill
+{
+    font-size:12px;
+    color:var(--muted);
+    padding:6px 10px;
+    border:1px solid var(--pillBorder);
+    border-radius:999px;
+    background: var(--pillBg);
+    white-space:nowrap;
+    max-width: 44vw;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.egfReaderHost[data-egf-reader="1"] .row
+{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+@media (max-width: 720px)
+{
+    .egfReaderHost[data-egf-reader="1"] header
+    {
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] header .left
+    {
+        justify-content:space-between;
+        width:100%;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] header .row
+    {
+        width:100%;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom:6px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] header .row::-webkit-scrollbar
+    {
+        height:6px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] header .row::-webkit-scrollbar-thumb
+    {
+        background: rgba(255,255,255,.15);
+        border-radius:999px;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] main
+{
+    padding: var(--pad);
+    max-width: 1400px;
+    width:100%;
+    margin:0 auto;
+    flex:1;
+    display:flex;
+}
+
+.egfReaderHost[data-egf-reader="1"] .card
+{
+    width:100%;
+    background: linear-gradient(180deg, var(--cardTop), var(--cardBot));
+    border:1px solid var(--borderSoft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+}
+
+.egfReaderHost[data-egf-reader="1"] .card .hd
+{
+    padding:12px 14px;
+    border-bottom:1px solid var(--borderSoft);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .card .hd h2
+{
+    margin:0;
+    font-size:14px;
+    color: var(--text);
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn
+{
+    appearance:none;
+    border:1px solid var(--btnBorder);
+    background: linear-gradient(180deg, var(--btnTop), var(--btnBot));
+    color: var(--text);
+    padding:10px 12px;
+    border-radius: 12px;
+    cursor:pointer;
+    font-weight:800;
+    transition: transform .08s ease, border-color .15s ease, filter .15s ease, box-shadow .15s ease;
+    user-select:none;
+    white-space:nowrap;
+    box-shadow: var(--btnShadow);
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn:hover
+{
+    border-color: var(--btnHoverBorder);
+    filter: brightness(1.03);
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn:active
+{
+    transform: translateY(1px);
+    filter: brightness(0.98);
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn.secondary
+{
+    background: var(--btnSecondaryBg);
+    font-weight:750;
+    box-shadow:none;
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn.good
+{
+    border-color: rgba(66,211,146,.35);
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn:disabled
+{
+    opacity:.45;
+    cursor:not-allowed;
+    box-shadow:none;
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn.pauseOn
+{
+    border-color: rgba(255,255,255,.28);
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(0,0,0,.14));
+}
+
+.egfReaderHost[data-egf-reader="1"] .btn:focus-visible,
+.egfReaderHost[data-egf-reader="1"] .toggle:focus-visible,
+.egfReaderHost[data-egf-reader="1"] .choice:focus-visible,
+.egfReaderHost[data-egf-reader="1"] .textInput:focus-visible
+{
+    outline: none;
+    box-shadow: var(--focusRing);
+}
+
+.egfReaderHost[data-egf-reader="1"] .toggle,
+.egfReaderHost[data-egf-reader="1"] .volCtl
+{
+    display:flex;
+    gap:8px; align-items:center;
+    padding:8px 10px;
+    border-radius: 999px;
+    border:1px solid var(--borderSoft2);
+    background: var(--surface2);
+    color: var(--muted);
+    font-size:12px;
+    user-select:none;
+    white-space:nowrap;
+}
+
+.egfReaderHost[data-egf-reader="1"] .toggle
+{
+    cursor:pointer;
+}
+
+.egfReaderHost[data-egf-reader="1"] .toggle input
+{
+    accent-color: var(--accent);
+}
+
+.egfReaderHost[data-egf-reader="1"] .volCtl
+{
+    cursor:default;
+}
+
+.egfReaderHost[data-egf-reader="1"] .volCtl .lbl
+{
+    white-space:nowrap;
+}
+
+.egfReaderHost[data-egf-reader="1"] .volCtl input[type="range"]
+{
+    width:140px;
+    accent-color: var(--accent);
+}
+
+.egfReaderHost[data-egf-reader="1"] .volCtl .pct
+{
+    min-width: 42px;
+    text-align:right;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .volCtl input[type="range"]
+    {
+        width: 46vw;
+        max-width: 200px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] .volCtl .pct
+    {
+        min-width: 38px;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .sceneWrap
+{
+    padding:14px;
+    min-height: 520px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    position:relative;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .sceneWrap
+    {
+        padding:12px;
+        min-height: 520px;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .sceneTop
+{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.egfReaderHost[data-egf-reader="1"] .sceneTitle
+{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    min-width:0;
+}
+
+.egfReaderHost[data-egf-reader="1"] .sceneTitle .t
+{
+    font-weight:900;
+    font-size: var(--title);
+    line-height:1.15;
+    word-break: break-word;
+}
+
+.egfReaderHost[data-egf-reader="1"] .sceneTitle .s
+{
+    color:var(--muted);
+    font-size:12px;
+    word-break: break-word;
+}
+
+.egfReaderHost[data-egf-reader="1"] .progress
+{
+    display:flex; align-items:center; gap:10px;
+    padding:8px 10px;
+    border:1px solid var(--pillBorder);
+    border-radius: 999px;
+    background: var(--pillBg);
+    font-size:12px;
+    color:var(--muted);
+    flex:0 0 auto;
+}
+
+.egfReaderHost[data-egf-reader="1"] .bar
+{
+    width:120px; height:8px; border-radius:999px;
+    background: rgba(255,255,255,.10);
+    overflow:hidden;
+}
+
+.egfReaderHost[data-egf-reader="1"][data-theme="light"] .bar
+{
+    background: rgba(15,25,45,.10);
+}
+
+.egfReaderHost[data-egf-reader="1"] .bar > i
+{
+    display:block; height:100%; width:0%;
+    background: linear-gradient(90deg, rgba(77,163,255,.9), rgba(66,211,146,.9));
+    border-radius:999px;
+    transition: width .25s ease;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .progress
+    {
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] .bar
+    {
+        flex:1;
+        width:auto;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .content
+{
+    background: var(--surface1);
+    border:1px solid var(--borderSoft);
+    border-radius: 16px;
+    padding:14px;
+    flex:1;
+    overflow:auto;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .content
+    {
+        padding:12px;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .textBlock
+{
+    white-space:pre-wrap;
+    line-height:1.55;
+    font-size: var(--textSize);
+    color: var(--text);
+}
+
+.egfReaderHost[data-egf-reader="1"] .muted
+{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .imgBlock
+{
+    width:100%;
+    max-height: min(520px, 60vh);
+    object-fit: contain;
+    background: rgba(0,0,0,.25);
+    border-radius: 14px;
+    border:1px solid var(--borderSoft);
+}
+
+.egfReaderHost[data-egf-reader="1"][data-theme="light"] .imgBlock
+{
+    background: rgba(15,25,45,.04);
+}
+
+.egfReaderHost[data-egf-reader="1"] .aboutCoverWrap
+{
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+
+.egfReaderHost[data-egf-reader="1"] .aboutCoverImg
+{
+    width:100%;
+    max-height: 260px;
+    object-fit: contain;
+    background: rgba(0,0,0,.25);
+    border-radius: 14px;
+    border:1px solid var(--borderSoft);
+}
+
+.egfReaderHost[data-egf-reader="1"][data-theme="light"] .aboutCoverImg
+{
+    background: rgba(15,25,45,.04);
+}
+
+.egfReaderHost[data-egf-reader="1"] video,
+.egfReaderHost[data-egf-reader="1"] audio
+{
+    width:100%;
+    border-radius: 14px;
+    border:1px solid var(--borderSoft);
+    background: rgba(0,0,0,.25);
+    max-height: 60vh;
+}
+
+.egfReaderHost[data-egf-reader="1"][data-theme="light"] video,
+.egfReaderHost[data-egf-reader="1"][data-theme="light"] audio
+{
+    background: rgba(15,25,45,.04);
+}
+
+.egfReaderHost[data-egf-reader="1"] .choices
+{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:10px;
+}
+
+@media (max-width: 740px)
+{
+    .egfReaderHost[data-egf-reader="1"] .choices
+    {
+        grid-template-columns: 1fr;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .choice
+{
+    text-align:left;
+    padding:12px;
+    border-radius: 14px;
+    border:1px solid var(--borderSoft2);
+    background: var(--surface2);
+    cursor:pointer;
+    transition: border-color .15s ease, transform .08s ease, filter .15s ease;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    min-height: 72px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .choice:hover
+{
+    border-color: var(--btnHoverBorder);
+    filter: brightness(1.02);
+}
+
+.egfReaderHost[data-egf-reader="1"] .choice:active
+{
+    transform: translateY(1px);
+}
+
+.egfReaderHost[data-egf-reader="1"] .choice[aria-disabled="true"]
+{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/* Feedback after selecting an answer */
+.egfReaderHost[data-egf-reader="1"] .choice.correct
+{
+    background: rgba(66, 211, 146, .18);
+    border-color: rgba(66, 211, 146, .55);
+}
+
+.egfReaderHost[data-egf-reader="1"] .choice.wrong
+{
+    background: rgba(255, 92, 122, .14);
+    border-color: rgba(255, 92, 122, .55);
+}
+
+.egfReaderHost[data-egf-reader="1"] .badge
+{
+    align-self:flex-start;
+    font-size:11px;
+    color:var(--muted);
+    padding:4px 8px;
+    border:1px solid var(--borderSoft2);
+    border-radius:999px;
+    background: var(--surface3);
+}
+
+.egfReaderHost[data-egf-reader="1"] .footerActions
+{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+    padding-top:6px;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .footerActions
+    {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] .footerActions .btn
+    {
+        width:100%;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .notice
+{
+    padding:10px 12px;
+    border-radius: 14px;
+    background: var(--noticeBg);
+    border: 1px solid var(--noticeBorder);
+    color: var(--text);
+    font-size:13px;
+    line-height:1.35;
+}
+
+.egfReaderHost[data-egf-reader="1"] .notice.neutral
+{
+    background: var(--noticeNeutralBg);
+    border-color: var(--noticeNeutralBorder);
+}
+
+.egfReaderHost[data-egf-reader="1"] .notice.warn
+{
+    background: var(--noticeWarnBg);
+    border-color: var(--noticeWarnBorder);
+    color: var(--noticeWarnText);
+}
+
+.egfReaderHost[data-egf-reader="1"] .pauseOverlay
+{
+    position:absolute; inset:0;
+    display:none;
+    align-items:center; justify-content:center;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius);
+    z-index: 50;
+    padding: 14px;
+}
+
+.egfReaderHost[data-egf-reader="1"].paused .pauseOverlay
+{
+    display:flex;
+}
+
+.egfReaderHost[data-egf-reader="1"] .pausePanel
+{
+    width:min(520px, 92%);
+    background: linear-gradient(180deg, var(--cardTop), var(--cardBot));
+    border:1px solid var(--borderSoft2);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 14px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+}
+
+.egfReaderHost[data-egf-reader="1"] .pausePanel h3
+{
+    margin:0;
+    font-size:16px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .pausePanel p
+{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.4;
+}
+
+/* Modal stays fixed viewport - scoped so themes can't break it */
+
+.egfReaderHost[data-egf-reader="1"] .modal
+{
+    position:fixed; inset:0;
+    display:none;
+    z-index: 60;
+    align-items:stretch;
+    justify-content:flex-end;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal.open
+{
+    display:flex;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .backdrop
+{
+    position:absolute; inset:0;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .panel
+{
+    position:relative;
+    width: min(560px, 100%);
+    height: 100%;
+    background: linear-gradient(180deg, var(--cardTop), var(--cardBot));
+    border-left:1px solid var(--borderSoft2);
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-direction:column;
+    transform: translateX(10px);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal.open .panel
+{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .panelHd
+{
+    padding:12px 14px;
+    border-bottom:1px solid var(--borderSoft);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .panelHd .title
+{
+    font-weight:900;
+    color: var(--text);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .panelHd .title span
+{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.egfReaderHost[data-egf-reader="1"] .modal .panelBd
+{
+    padding:14px;
+    overflow:auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+@media (max-width: 740px)
+{
+    .egfReaderHost[data-egf-reader="1"] .modal
+    {
+        justify-content:center;
+        align-items:flex-end;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] .modal .panel
+    {
+        width: min(720px, 100%);
+        height: min(88vh, 720px);
+        border-left:none;
+        border-top:1px solid var(--borderSoft2);
+        border-radius: 18px 18px 0 0;
+    }
+}
+
+/* KV grid (this is where themes often break things!)
+   Scoped grid prevents "label/value inversion" caused by theme rules. */
+
+.egfReaderHost[data-egf-reader="1"] .kv
+{
+    display:grid;
+    grid-template-columns: 150px 1fr;
+    gap:8px 10px;
+    font-size:13px;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .kv
+    {
+        grid-template-columns: 120px 1fr;
+        font-size:12px;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .kv .k
+{
+    color:var(--muted);    
+    display:block;
+    justify-self:start;
+}
+
+.egfReaderHost[data-egf-reader="1"] .kv .v
+{
+    color:var(--text);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    display:block;
+    justify-self:start;
+}
+
+.egfReaderHost[data-egf-reader="1"] .descBox
+{
+    border:1px solid var(--borderSoft2);
+    border-radius: 14px;
+    background: var(--surface2);
+    padding:10px 12px;
+    color: var(--text);
+    white-space:pre-wrap;
+    line-height:1.45;
+    font-size: 14px;
+}
+
+.egfReaderHost[data-egf-reader="1"] details.debug
+{
+    border:1px solid var(--borderSoft2);
+    border-radius: 14px;
+    background: var(--surface2);
+    padding:10px 12px;
+}
+
+.egfReaderHost[data-egf-reader="1"] details.debug summary
+{
+    cursor:pointer;
+    color: var(--muted);
+    font-weight:800;
+    list-style:none;
+}
+
+.egfReaderHost[data-egf-reader="1"] details.debug summary::-webkit-details-marker
+{
+    display:none;
+}
+
+.egfReaderHost[data-egf-reader="1"] details.debug .inner
+{
+    margin-top:10px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsGrid
+{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 10px;
+    border-radius: 14px;
+    border:1px solid var(--borderSoft2);
+    background: var(--surface2);
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow .left
+{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    min-width: 160px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow .left .name
+{
+    font-weight:900;
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow .left .hint
+{
+    font-size:12px;
+    color:var(--muted);
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow .right
+{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow input[type="range"]
+{
+    width: min(280px, 60vw);
+    accent-color: var(--accent);
+}
+
+.egfReaderHost[data-egf-reader="1"] .settingsRow .pct
+{
+    min-width: 44px;
+    text-align:right;
+    font-variant-numeric: tabular-nums;
+}
+
+.egfReaderHost[data-egf-reader="1"] .srOnly
+{
+    position:absolute !important;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
+
+.egfReaderHost[data-egf-reader="1"] .hangman
+{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.egfReaderHost[data-egf-reader="1"] .hangman .right
+{
+    flex:1;
+    min-width:240px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .hangman .word
+{
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .hangman .used
+{
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.egfReaderHost[data-egf-reader="1"] .inputRow
+{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.egfReaderHost[data-egf-reader="1"] .textInput
+{
+    flex:1;
+    padding:10px 12px;
+    border-radius: 14px;
+    border:1px solid var(--borderSoft2);
+    background: var(--surface2);
+    color: var(--text);
+    font-size:16px;
+}
+
+/* === Input feedback (question_simple + hangman_simple) =================== */
+
+.egfReaderHost[data-egf-reader="1"] .textInput.picked.is-correct
+{
+  border-color: rgba(66, 211, 146, .55);
+  background: rgba(66, 211, 146, .12);
+}
+
+.egfReaderHost[data-egf-reader="1"] .textInput.picked.is-wrong
+{
+  border-color: rgba(255, 92, 122, .55);
+  background: rgba(255, 92, 122, .10);
+}
+
+/* Keep the feedback visible even if the input is disabled */
+
+.egfReaderHost[data-egf-reader="1"] .textInput:disabled
+{
+  opacity: .88;
+}
+
+.egfReaderHost[data-egf-reader="1"] .textInput.picked:disabled
+{
+  opacity: 1;
+}
+
+.egfReaderHost[data-egf-reader="1"] [data-egf="scoreModal"] .progress
+{
+    width:100%;
+    justify-content:space-between;
+}
+
+.egfReaderHost[data-egf-reader="1"] [data-egf="scoreModal"] .bar
+{
+    flex:1;
+    width:auto;
+}
+
+.egfReaderHost[data-egf-reader="1"] .card .hd
+{
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.egfReaderHost[data-egf-reader="1"] .card .hd .sceneTitle
+{
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.egfReaderHost[data-egf-reader="1"] [data-egf="sceneName"]
+{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.egfReaderHost[data-egf-reader="1"] [data-egf="sceneSub"]
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.egfReaderHost[data-egf-reader="1"] [data-egf="rolePill"]
+{
+    flex: 0 0 auto;
+}
+
+@media (max-width: 520px)
+{
+    .egfReaderHost[data-egf-reader="1"] .card .hd
+    {
+        gap: 8px;
+    }
+
+    .egfReaderHost[data-egf-reader="1"] [data-egf="rolePill"]
+    {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.egfReaderHost[data-egf-reader="1"] .hidden
+{
+    display: none !important;
+}
+
+/* === WP Admin Bar safe area =========================================== */
+/* Default value if there's no admin bar */
+
+.egfReaderHost
+{
+    --egf-adminbar-h: 0px;
+}
+
+/* If WP exposes the variable, use it */
+
+body.admin-bar .egfReaderHost
+{
+  --egf-adminbar-h: var(--wp-admin--admin-bar--height, 32px);
+}
+
+/* Modals: avoid having the top end up behind the wpadminbar */
+
+.egfReaderHost .modal.open
+{
+  /* Important: keep the full-screen inset, but add top padding. */
+
+  padding-top: calc(var(--egf-adminbar-h) + 12px);
+  box-sizing: border-box;
+
+  /* If your modal is vertically centered with flex, force it to start from the top */
+
+  align-items: flex-start;
+}
+
+/* The backdrop must not cover the admin bar (optional but recommended) */
+
+body.admin-bar .egfReaderHost .modal .backdrop
+{
+  top: var(--egf-adminbar-h);
+  height: calc(100vh - var(--egf-adminbar-h));
+}
+
+/* The panel must not exceed the remaining screen */
+
+body.admin-bar .egfReaderHost .modal .panel
+{
+  max-height: calc(100vh - var(--egf-adminbar-h) - 24px);
+  overflow: auto;
+}
+
+.egfReaderHost[data-egf-reader="1"] .scoreProgressPct
+{
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: .2px;
+
+  /* JS sets background-image; we clip the background to the text */
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
