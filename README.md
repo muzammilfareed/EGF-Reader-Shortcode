@@ -1,4 +1,4 @@
-# EGF Reader Shortcode – Quick Start Guide
+# EGF Reader Shortcode – Quick Start Guides
 
 **EGF Reader Shortcode** lets you embed and play **EGF 1.1 interactive games** directly inside WordPress posts or pages using a simple shortcode.  
 Upload an `.egf` file to your Media Library, then paste the shortcode with the game URL to display the reader (with optional language + theme controls).
